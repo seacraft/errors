@@ -1,3 +1,4 @@
+// Package errors error aggregate
 package errors
 
 import (
@@ -76,12 +77,14 @@ func (agg aggregate) Error() string {
 	return "[" + result + "]"
 }
 
+// Is it within the error
 func (agg aggregate) Is(target error) bool {
 	return agg.visit(func(err error) bool {
 		return errors.Is(err, target)
 	})
 }
 
+// visit error match
 func (agg aggregate) visit(f func(err error) bool) bool {
 	for _, err := range agg {
 		switch err := err.(type) {
