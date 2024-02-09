@@ -13,14 +13,14 @@ vet: | test
 staticcheck:
 ifeq (,$(shell which staticcheck 2>/dev/null))
 	@echo "===========> Installing staticcheck"
-	$(GO) install honnef.co/go/tools/cmd/staticcheck@latest
+	$(GO) install honnef.co/go/tools/cmd/staticcheck@v0.4.6
 endif
 	staticcheck -checks all $(PKGS)
 
 misspell:
 ifeq (,$(shell which misspell 2>/dev/null))
 	@echo "===========> Installing misspell"
-	$(GO) install github.com/client9/misspell/cmd/misspell
+	$(GO) install github.com/client9/misspell/cmd/misspell@v0.3.4
 endif
 	misspell \
 		-locale GB \
@@ -37,7 +37,7 @@ endif
 ineffassign:
 ifeq (,$(shell which ineffassign 2>/dev/null))
 	@echo "===========> Installing ineffassign"
-	$(GO) install github.com/gordonklaus/ineffassign@latest
+	$(GO) install github.com/gordonklaus/ineffassign@v0.1.0
 endif
 	find $(SRCDIRS) -name '*.go' | xargs ineffassign
 
@@ -53,7 +53,7 @@ endif
 errcheck:
 ifeq (,$(shell which errcheck 2>/dev/null))
 	@echo "===========> Installing errcheck"
-	$(GO) install github.com/kisielk/errcheck
+	$(GO) install github.com/kisielk/errcheck@v1.7.0
 endif
 	errcheck $(PKGS)
 
