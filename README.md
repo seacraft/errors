@@ -1,4 +1,4 @@
-# Errors Packages
+# errors
 ![workflow check](https://github.com/seacraft/errors/actions/workflows/check.yml/badge.svg)
 [![Go Report Card](https://goreportcard.com/badge/github.com/seacraft/errors?)](https://goreportcard.com/report/github.com/seacraft/errors)
 [![golangci badge](https://github.com/golangci/golangci-web/blob/master/src/assets/images/badge_a_plus_flat.svg)](https://golangci.com/r/github.com/seacraft/errors)
