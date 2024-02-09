@@ -25,6 +25,8 @@ jobs:
       - name: Check go mod
         run: |
           go mod tidy
+          git diff --exit-code go.mod
+          git diff --exit-code go.sum
   test:
     runs-on: ubuntu-latest
     needs: go-mod
